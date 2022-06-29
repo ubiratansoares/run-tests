@@ -3,9 +3,9 @@ author: 'emulator.wtf'
 description: 'Run tests with emulator.wtf'
 inputs:
   version:
-    description: 'ew-cli verison to use'
+    description: 'ew-cli version to use'
     required: true
-    default: '0.0.46'
+    default: '0.0.47'
   api-token:
     description: 'Api token for emulator.wtf'
     required: true
@@ -52,11 +52,11 @@ runs:
   using: composite
   steps:
     - name: Setup ew-cli
-      uses: emulator-wtf/setup-ew-cli@master
+      uses: ubiratansoares/setup-ew-cli@ufs/node16
       with:
         version: ${{ inputs.version }}
     - name: Run instrumented tests
-      uses: emulator-wtf/invoke@master
+      uses: ubiratansoares/invoke@ufs/node16
       with:
         api-token: ${{ inputs.api-token }}
         app: ${{ inputs.app }}
