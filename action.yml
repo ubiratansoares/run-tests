@@ -52,11 +52,11 @@ runs:
   using: composite
   steps:
     - name: Setup ew-cli
-      uses: ubiratansoares/setup-ew-cli@ufs/node16
+      uses: ubiratansoares/setup-ew-cli@ufs/node-16
       with:
         version: ${{ inputs.version }}
     - name: Run instrumented tests
-      uses: ubiratansoares/invoke@ufs/node16
+      uses: ubiratansoares/invoke@ufs/node-16
       with:
         api-token: ${{ inputs.api-token }}
         app: ${{ inputs.app }}
